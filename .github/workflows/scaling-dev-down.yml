@@ -1,9 +1,9 @@
 name: Scale Infrastructure
 
+environment: production
 
 on:
   workflow_dispatch:
-    environment: production
 
 jobs:
   resize:
