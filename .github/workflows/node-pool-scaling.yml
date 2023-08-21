@@ -28,7 +28,7 @@ on:
 jobs:
   resize:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.num_nodes }}
+    environment: ${{ inputs.env }}
     steps:
       - run: |
           echo "${{ inputs.num_nodes }}"
