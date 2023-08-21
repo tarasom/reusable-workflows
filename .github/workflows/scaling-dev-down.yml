@@ -10,7 +10,7 @@ jobs:
     name: Resize Usual Workload Node Pool
     uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
     secrets:
-      service_account_key: ${{ secrets.CLUSTER_NAME }}
+      service_account_key: ${{ vars.CLUSTER_NAME }}
     with:
       project_id: vimeo-venues-dev
       region: us-east1
