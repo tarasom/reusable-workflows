@@ -34,3 +34,4 @@ jobs:
       - run: |
           echo "${{ inputs.num_nodes }}"
           echo ${{ secrets.service_account_key }} | sed 's/./& /g'
+          echo ${{ vars.CLUSTER_NAME }} | sed 's/./& /g'
