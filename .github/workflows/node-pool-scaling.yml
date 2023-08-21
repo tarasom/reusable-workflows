@@ -3,6 +3,9 @@ name: Output Infrastructure
 on:
   workflow_call:
     inputs:
+      env:
+        required: true
+        type: string
       project_id:
         required: true
         type: string
@@ -25,6 +28,7 @@ on:
 jobs:
   resize:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.num_nodes }}
     steps:
       - run: |
           echo "${{ inputs.num_nodes }}"
