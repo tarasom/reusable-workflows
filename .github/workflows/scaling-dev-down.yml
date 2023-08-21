@@ -1,0 +1,13 @@
+name: Scale Infrastructure
+
+
+on:
+  workflow_dispatch:
+    environment: production
+
+jobs:
+  resize:
+    uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
+    secrets: inherit
+    with:
+      num_nodes: 2

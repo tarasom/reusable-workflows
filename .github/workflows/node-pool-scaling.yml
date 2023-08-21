@@ -1,0 +1,16 @@
+name: Output Infrastructure
+
+on:
+  workflow_call:
+    inputs:
+      num_nodes:
+        required: true
+        type: number
+
+jobs:
+  resize:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ inputs.num_nodes }}"
+          echo "${{ secrets.CLUSTER_NAME }}"
