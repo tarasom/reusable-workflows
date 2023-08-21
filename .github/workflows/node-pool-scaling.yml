@@ -3,9 +3,25 @@ name: Output Infrastructure
 on:
   workflow_call:
     inputs:
+      project_id:
+        required: true
+        type: string
+      region:
+        required: true
+        type: string
+      cluster_name:
+        required: true
+        type: string
+      node_pool:
+        required: true
+        type: string
       num_nodes:
         required: true
         type: number
+    secrets:
+      service_account_key:
+        required: true
+        type: string
 
 jobs:
   resize:
@@ -13,4 +29,4 @@ jobs:
     steps:
       - run: |
           echo "${{ inputs.num_nodes }}"
-          echo "${{ secrets.CLUSTER_NAME }}"
+          echo "${{ secrets.service_account_key }}"
