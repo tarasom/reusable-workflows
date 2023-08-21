@@ -1,0 +1,23 @@
+name: Scale Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        description: Select the env
+        options:
+          - dev
+          - prod
+      traffic:
+        type: choice
+        description: Select the traffic mode
+        options:
+          - usual
+          - high
+
+jobs:
+  call-workflow-passing-data:
+    uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
+    with:
+      traffic: ${{ github.event.inputs.traffic }}
