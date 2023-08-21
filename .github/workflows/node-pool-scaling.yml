@@ -3,14 +3,14 @@ name: Output Infrastructure
 on:
   workflow_call:
     inputs:
-      traffic:
+      num_nodes:
         required: true
-        type: string
+        type: number
 
 jobs:
-  reusable_workflow_job:
+  resize:
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - run: |
-          echo "${{ inputs.traffic }}"
+          echo "${{ inputs.num_nodes }}"
+          echo "${{ secrets.CLUSTER_NAME }}"

@@ -17,7 +17,9 @@ on:
           - high
 
 jobs:
-  call-workflow-passing-data:
-    uses: tarasom/reusable-workflows/.github/workflows/templates/node-pool-scaling.yml@main
+  resize:
+    uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
+    environment: dev
+    secrets:
     with:
-      traffic: ${{ github.event.inputs.traffic }}
+      num_nodes: 2
