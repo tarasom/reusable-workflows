@@ -10,6 +10,7 @@ on:
 jobs:
   resize:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - run: |
           echo "${{ inputs.num_nodes }}"

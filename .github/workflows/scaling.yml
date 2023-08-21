@@ -19,7 +19,6 @@ on:
 jobs:
   resize:
     uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
-    environment: dev
     secrets:
     with:
       num_nodes: 2
