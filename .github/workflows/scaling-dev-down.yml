@@ -1,21 +1,14 @@
 name: Scale Infrastructure
 
-
 on:
   workflow_dispatch:
-    environment: production
 
 jobs:
   resize-usual-workload:
     name: Resize Usual Workload Node Pool
     uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
-    secrets:
-      service_account_key: ${{ vars.CLUSTER_NAME }}
     with:
       env: production
-      project_id: vimeo-venues-dev
-      region: us-east1
-      cluster_name: venues-dev
       node_pool: np-dev-main
       num_nodes: 1
 
@@ -23,12 +16,7 @@ jobs:
     name: Resize Heavy Workload Node Pool
     uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
     needs: resize-usual-workload
-    secrets:
-      service_account_key: ${{ vars.CLUSTER_NAME }}
     with:
       env: production
-      project_id: vimeo-venues-dev
-      region: us-east1
-      cluster_name: venues-dev
       node_pool: np-dev-spot
       num_nodes: 0

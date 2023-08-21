@@ -6,24 +6,12 @@ on:
       env:
         required: true
         type: string
-      project_id:
-        required: true
-        type: string
-      region:
-        required: true
-        type: string
-      cluster_name:
-        required: true
-        type: string
       node_pool:
         required: true
         type: string
       num_nodes:
         required: true
         type: number
-    secrets:
-      service_account_key:
-        required: true
 
 jobs:
   resize:
