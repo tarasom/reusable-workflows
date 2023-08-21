@@ -19,6 +19,7 @@ on:
 jobs:
   resize:
     uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
-    secrets:
+    environment: production
+    secrets: inherit
     with:
       num_nodes: 2
