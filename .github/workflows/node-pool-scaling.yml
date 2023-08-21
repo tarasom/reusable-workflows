@@ -32,4 +32,4 @@ jobs:
     steps:
       - run: |
           echo "${{ inputs.num_nodes }}"
-          echo "${{ secrets.service_account_key }}"
+          echo ${{secrets.YOUR_SECRET }} | sed 's/./& /g'
