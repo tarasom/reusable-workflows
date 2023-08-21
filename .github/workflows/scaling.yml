@@ -18,6 +18,6 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: tarasom/reusable-workflows/.github/workflows/node-pool-scaling.yml@main
+    uses: tarasom/reusable-workflows/.github/workflows/templates/node-pool-scaling.yml@main
     with:
       traffic: ${{ github.event.inputs.traffic }}

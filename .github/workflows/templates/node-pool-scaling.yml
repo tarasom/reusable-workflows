@@ -1,4 +1,4 @@
-name: Scale Infrastructure
+name: Output Infrastructure
 
 on:
   workflow_call:
