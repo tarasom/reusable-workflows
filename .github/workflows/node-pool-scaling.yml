@@ -21,7 +21,6 @@ on:
     secrets:
       service_account_key:
         required: true
-        type: string
 
 jobs:
   resize:
